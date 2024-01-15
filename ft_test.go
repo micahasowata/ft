@@ -4,26 +4,24 @@ import (
 	"testing"
 
 	"github.com/spobly/ft"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestGetCategory(t *testing.T) {
 	extension := ".jpg"
 	want := "Images"
 
-	got := ft.GetCategory(extension)
-
-	if got != want {
-		t.Fatalf("for %s: want %s, got %s", extension, want, got)
-	}
+	got, err := ft.GetCategory(extension)
+	require.NoError(t, err)
+	assert.Equal(t, got, want)
 }
 
 func TestInvalidExtension(t *testing.T) {
 	extension := ".img"
-	want := "Not Found"
 
-	got := ft.GetCategory(extension)
+	_, err := ft.GetCategory(extension)
 
-	if got != want {
-		t.Fatalf("for %s: want %s, got %s", extension, want, got)
-	}
+	require.Error(t, err)
+	require.EqualError(t, err, ft.FTNotFoundErr)
 }
