@@ -16,3 +16,14 @@ func TestGetCategory(t *testing.T) {
 		t.Fatalf("for %s: want %s, got %s", extension, want, got)
 	}
 }
+
+func TestInvalidExtension(t *testing.T) {
+	extension := ".img"
+	want := "Not Found"
+
+	got := ft.GetCategory(extension)
+
+	if got != want {
+		t.Fatalf("for %s: want %s, got %s", extension, want, got)
+	}
+}
