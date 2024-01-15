@@ -26,8 +26,12 @@ func main() {
 	c, err := ft.GetCategory(".png")
 
 	if err != nil {
-       if errors.Is(err, ft.ErrNotFound) {
-		// Handle not unsupported extension
+       if errors.Is(err, ft.ErrInvalidFormat) {
+		// Handle err
+	   }
+
+	   if errors.Is(err, ft.ErrNotFound) {
+		// Handle err
 	   }
 	}
 
