@@ -23,5 +23,5 @@ func TestInvalidExtension(t *testing.T) {
 	_, err := ft.GetCategory(extension)
 
 	require.Error(t, err)
-	require.EqualError(t, err, ft.FTNotFoundErr)
+	require.EqualError(t, err, ft.ErrNotFound.Error())
 }

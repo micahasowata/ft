@@ -1,11 +1,5 @@
 package ft
 
-import (
-	"fmt"
-)
-
-var FTNotFoundErr = "extension not found or currently unsupported."
-
 var fileExtensions = map[string]string{
 	".mp3":  "Audio",
 	".wav":  "Audio",
@@ -50,7 +44,7 @@ var fileExtensions = map[string]string{
 func GetCategory(extension string) (string, error) {
 	category, found := fileExtensions[extension]
 	if !found {
-		return "", fmt.Errorf(FTNotFoundErr)
+		return "", ErrNotFound
 	}
 	return category, nil
 }
