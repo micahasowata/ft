@@ -17,11 +17,19 @@ func TestGetCategory(t *testing.T) {
 	assert.Equal(t, got, want)
 }
 
-func TestInvalidExtension(t *testing.T) {
+func TestMissingExtension(t *testing.T) {
 	extension := ".img"
 
 	_, err := ft.GetFileCategory(extension)
 
 	require.Error(t, err)
 	require.EqualError(t, err, ft.ErrNotFound.Error())
+}
+
+func TestInvalidExtension(t *testing.T) {
+	extension := "png"
+	_, err := ft.GetFileCategory(extension)
+
+	require.Error(t, err)
+	require.EqualError(t, err, ft.ErrInvalidFormat.Error())
 }
