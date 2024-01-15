@@ -23,6 +23,8 @@ var fileExtensions = map[string]string{
 	".xlsx": "Documents",
 	".pptx": "Documents",
 	".txt":  "Documents",
+	".mobi": "Documents",
+	".epub": "Documents",
 	".zip":  "Archives",
 	".rar":  "Archives",
 	".7z":   "Archives",
