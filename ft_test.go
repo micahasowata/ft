@@ -3,7 +3,7 @@ package ft_test
 import (
 	"testing"
 
-	"github.com/spobly/ft/v2"
+	"github.com/spobly/ft"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
