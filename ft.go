@@ -39,10 +39,10 @@ var fileExtensions = map[string]string{
 	".xml":  "Data",
 }
 
-func GetCategory(extension string) string {
+func GetCategory(extension string) string, error {
 	category, found := fileExtensions[extension]
 	if !found {
-		return "Not Found"
+		return nil, fmt.Errorf("extension not found or currently unsupported.")
 	}
-	return category
+	return category, nil
 }
