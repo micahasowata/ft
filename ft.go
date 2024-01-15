@@ -33,6 +33,7 @@ var fileExtensions = map[string]string{
 	".dmg":  "Executables",
 	".bin":  "Executables",
 	".msi":  "Executables",
+	".deb":  "Executables",
 	".csv":  "Data",
 	".json": "Data",
 	".xml":  "Data",
