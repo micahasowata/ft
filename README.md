@@ -19,7 +19,7 @@ package main
 import (
 	"fmt"
     "errors"
-	"github.com/spobly/ft"
+	"github.com/spobly/ft/v2"
 )
 
 func main() {

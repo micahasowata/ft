@@ -1,4 +1,4 @@
-module github.com/spobly/ft
+module github.com/spobly/ft/v2
 
 go 1.21.5
 
