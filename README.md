@@ -18,12 +18,19 @@ package main
 
 import (
 	"fmt"
-
+    "errors"
 	"github.com/spobly/ft"
 )
 
 func main() {
-	c := ft.GetCategory(".png")
+	c, err := ft.GetCategory(".png")
+
+	if err != nil {
+       if errors.Is(err, ft.ErrNotFound) {
+		// Handle not unsupported extension
+	   }
+	}
+
 	fmt.Println(c)
 }
 ```
